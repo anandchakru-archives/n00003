@@ -1,20 +1,58 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nlib-nivite (invite)="loadInviteData($event)" (login)="loadUserData($event)" (guest)="loadGuestData($event)">
+</nlib-nivite>
 
+<div class="invite-wrap" [ngClass]="loading?'fadeout':'fadein'">
+  <div fxLayout="row" fxLayoutAlign="center start">
+    <div fxLayout="column" fxLayoutGap="30px" fxLayoutAlign="center start">
+      <mat-card class="title-card no-border">
+        <mat-card-header>
+          <mat-card-title>
+            <h1>{{invite?.title}}</h1>
+          </mat-card-title>
+        </mat-card-header>
+      </mat-card>
+      <mat-card class="main-card no-border">
+        <mat-card-header *ngIf="photo?.title">
+          <mat-card-title>{{photo?.title}}</mat-card-title>
+          <mat-card-subtitle>{{photo?.description}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="photo?.url">
+      </mat-card>
+      <mat-card class="msg-card no-border">
+        <mat-card-header>
+          <mat-card-title>{{invite?.shortMsg}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <span markdown [data]="invite?.longMsg"> {{invite?.longMsg}}</span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <span class="spaced">&nbsp;</span>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <mat-card class="venue-card no-border">
+      <mat-card-header>
+        <mat-card-title>
+          <h1>Venue</h1>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>{{invite?.addrText}}</mat-card-content>
+    </mat-card>
+    <mat-card class="time-start-card no-border">
+      <mat-card-header>
+        <mat-card-title>
+          <h1>Starts</h1>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>{{invite?.timeFrom}}</mat-card-content>
+    </mat-card>
+    <mat-card class="time-end-card no-border">
+      <mat-card-header>
+        <mat-card-title>
+          <h1>Ends</h1>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>{{invite?.timeTo}}</mat-card-content>
+    </mat-card>
+  </div>
+</div>

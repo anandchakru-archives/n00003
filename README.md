@@ -1,27 +1,17 @@
 # N00003
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
+This is a sample invite created for [Nivite](https://nivite.jrvite.com/). Demo is [here](https://nesign.github.io/n00003)
 
-## Development server
+<!--
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```sh
+ng new n00003 --routing=false --style scss --prefix nivite
+npm i @angular/material @angular/cdk @angular/animations @angular/flex-layout hammerjs @nivite/nlib @angular/fire bootstrap file-saver firebase moment moment-timezone ngx-markdown
 
-## Code scaffolding
+ng add angular-cli-ghpages
+# package.json -- > "deploy": "ng deploy --base-href=/n00003/"
+npm run deploy
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+-->

@@ -1,0 +1,62 @@
+* {
+  font-family: Nunito, Roboto, "Helvetica Neue", sans-serif;
+}
+
+.invite-wrap {
+  transition: visibility 0s linear 2s, opacity 2s;
+  margin-bottom: 140px;
+
+  .fadeout {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .fadein {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.spaced {
+  margin: 20px 0;
+}
+
+mat-card {
+  align-self: center;
+}
+
+.time-start-card,
+.time-end-card,
+.venue-card,
+.title-card,
+.msg-card {
+  & mat-card-header {
+    justify-content: center;
+  }
+}
+
+.no-border {
+  border: 0;
+  box-shadow: none;
+}
+
+.main-card {
+  max-width: 600px;
+  padding-top: 0;
+  box-shadow: none;
+  border: none;
+
+  &:hover mat-card-header {
+    clip-path: circle(140% at 10% 10%);
+  }
+
+  mat-card-header {
+    position: absolute;
+    width: 100%;
+    margin-left: -16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    clip-path: circle(10% at 5% 5%);
+    transition: 1s clip-path linear;
+    padding-top: 10px;
+  }
+}
